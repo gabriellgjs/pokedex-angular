@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --black: #000000cc;
+  --white: #ffffff;
+
+  --type-bug: #729F3F;
+  --type-dragon: #F16E57;
+  --type-fairy: #FDB9E9;
+  --type-fire: #FD7D24;
+  --type-ghost: #7B62A3;
+  --type-ground: #AB9842;
+  --type-normal: #A4ACAF;
+  --type-psychic: #F366B9;
+  --type-stell: #A4A4A4;
+  --type-dark: #707070;
+  --type-electric: #EED535;
+  --type-fighting: #D56723;
+  --type-flying: #3DC7EF;
+  --type-grass: #9BCC50;
+  --type-ice: #51C4E7;
+  --type-poison: #B97FC9;
+  --type-rock: #A38C21;
+  --type-water: #4592C4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--black);
+}
