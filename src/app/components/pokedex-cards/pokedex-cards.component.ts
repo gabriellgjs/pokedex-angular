@@ -16,6 +16,9 @@ export class PokedexCardsComponent implements OnInit, OnDestroy{
   subscription? = Subscription;
   pokemonService = inject(PokemonService)
   pokemonList!: PokemonList;
+
+
+
   constructor() {}
 
   ngOnInit() {

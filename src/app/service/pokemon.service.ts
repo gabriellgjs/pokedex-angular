@@ -6,7 +6,7 @@ import {Pokemon, PokemonList} from "../models/pokemon.model";
   providedIn: 'root'
 })
 export class PokemonService {
-  limit = 20;
+  limit = 24;
 
   private url = environment.api;
 
