@@ -18,5 +18,5 @@ export type Pokemon = {
     type: {
       name: string;
     }
-  }
+  }[]
 }

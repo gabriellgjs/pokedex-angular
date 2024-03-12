@@ -1,0 +1,13 @@
+.summary {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0;
+  flex-direction: column;
+}
+
+.summary-list {
+  display: grid;
+  grid-template-columns: repeat(6, 5fr);
+}
