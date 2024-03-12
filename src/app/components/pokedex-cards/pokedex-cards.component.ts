@@ -4,11 +4,12 @@ import {PokemonService} from "../../service/pokemon.service";
 import {PokemonList} from "../../models/pokemon.model";
 import {Subscription} from "rxjs";
 import {AsyncPipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'pokedex-cards',
   standalone: true,
-  imports: [CardPokemonComponent, AsyncPipe, NgForOf, JsonPipe, NgIf],
+  imports: [CardPokemonComponent, AsyncPipe, NgForOf, JsonPipe, NgIf, ButtonComponent],
   templateUrl: './pokedex-cards.component.html',
   styleUrl: './pokedex-cards.component.scss'
 })
@@ -16,8 +17,6 @@ export class PokedexCardsComponent implements OnInit, OnDestroy{
   subscription? = Subscription;
   pokemonService = inject(PokemonService)
   pokemonList!: PokemonList;
-
-
 
   constructor() {}
 
