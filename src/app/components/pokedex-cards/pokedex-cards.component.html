@@ -2,5 +2,5 @@
   <ul class="summary-list">
       <card-pokemon *ngFor="let pokemon of pokemonList?.results" [urlPokemon]="pokemon.url"></card-pokemon>
   </ul>
-  <button-component [value]="'Carregar mais'"></button-component>
+  <button-component (click)="loadMorePokemons()" [value]="'Carregar mais'"></button-component>
 </div>

@@ -19,4 +19,7 @@ export class PokemonService {
   getPokemon(url: string) {
     return this.httpClient.get<Pokemon>(url)
   }
+  getPokemonURL(url: string) {
+    return this.httpClient.get<PokemonList>(url)
+  }
 }

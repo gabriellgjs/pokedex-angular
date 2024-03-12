@@ -17,6 +17,7 @@ export class PokedexCardsComponent implements OnInit, OnDestroy{
   subscription? = Subscription;
   pokemonService = inject(PokemonService)
   pokemonList!: PokemonList;
+  next?: string;
 
   constructor() {}
 
@@ -24,6 +25,7 @@ export class PokedexCardsComponent implements OnInit, OnDestroy{
     this.getPokemonList().subscribe({
       next: response => {
         this.pokemonList = response;
+        this.next = response.next;
       },
       error: error => console.error('error', error),
     })
@@ -37,4 +39,24 @@ export class PokedexCardsComponent implements OnInit, OnDestroy{
     return this.pokemonService.getPokemonList()
   }
 
+  getPokemonURL() {
+    return this.pokemonService.getPokemonURL(this.next ?? '')
+  }
+
+  loadMorePokemons() {
+    this.getPokemonURL().subscribe({
+      next: response => {
+        console.log(this.next)
+        const test= {
+          count: this.pokemonList.count + response.count,
+          next: response.next,
+          results: [...this.pokemonList.results, ...response.results],
+        }
+        this.pokemonList = test
+        this.next = response.next;
+        console.log(test)
+      },
+      error: error => console.error('error', error),
+    })
+  }
 }
